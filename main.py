@@ -56,6 +56,11 @@ def create_department():
 def find_student(students, student_id):
     # Find a student by ID.
 
+    try:
+        student_id = int(student_id)
+    except (TypeError, ValueError):
+        return None
+
     for student in students:
 
         if student.student_id == student_id:
